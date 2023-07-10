@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/solid_bg2">
 
     <!--   <View
            android:id="@+id/top_view"
@@ -18,8 +19,7 @@
     <LinearLayout
         android:id="@+id/top_view"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="@drawable/solid_bg"
+        android:layout_height="180dp"
         android:orientation="vertical">
 
         <ImageView
@@ -60,14 +60,21 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <ImageView
+                <!--<ImageView
 
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_gravity="left"
                     android:src="@drawable/machine"
 
-                    />
+                    />-->
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/animation_view"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    app:lottie_rawRes="@raw/fingers_countdown"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true" />
 
                 <TextView
                     android:layout_width="wrap_content"

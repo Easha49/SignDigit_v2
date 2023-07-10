@@ -10,8 +10,11 @@ import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.airbnb.lottie.LottieAnimationView;
+
 public class MainActivity extends AppCompatActivity {
     LinearLayout  map , model , video , rating  , post ;
+    private LottieAnimationView animationView;
     ImageView UserProfile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
         video = findViewById(R.id.embeddedVideo) ;
         rating = findViewById(R.id.Rating) ;
         post = findViewById(R.id.post) ;
+        animationView = findViewById(R.id.animation_view);
+
+        // Start the animation
+        animationView.playAnimation();
 
         // Login Page
         UserProfile.setOnClickListener(new View.OnClickListener() {
