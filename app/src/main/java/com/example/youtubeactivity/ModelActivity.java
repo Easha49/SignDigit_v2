@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.media.ThumbnailUtils;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -30,7 +31,7 @@ public class ModelActivity extends AppCompatActivity {
 
     TextView result, confidence;
     ImageView imageView;
-    Button picture;
+    Button picture,upload;
     int imageSize = 224;
 
     @Override
@@ -45,6 +46,25 @@ public class ModelActivity extends AppCompatActivity {
         confidence = findViewById(R.id.confidence);
         imageView = findViewById(R.id.imageView);
         picture = findViewById(R.id.buttonCapture);
+        upload=findViewById (R.id.buttonUpload);
+
+        /*upload.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent (Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult (intent,3);
+            }
+        });*/
+        upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/*");
+                startActivityForResult(intent, 10);
+            }
+        });
+
 
         picture.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,6 +143,22 @@ public class ModelActivity extends AppCompatActivity {
 
             image=Bitmap.createScaledBitmap (image,imageSize,imageSize,false);
             classifyImage(image);
+        }
+        else if(requestCode==10){
+            if(data!=null){
+                Uri uri = data.getData();
+                try {
+                    Bitmap image = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri);
+                    int dimension = Math.min(image.getWidth(),image.getHeight()) ;
+                    image = ThumbnailUtils.extractThumbnail(image,dimension,dimension) ;
+                    imageView.setImageBitmap(image);
+                    image = Bitmap.createScaledBitmap(image , imageSize , imageSize , false  ) ;
+                    classifyImage(image) ;
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
