@@ -1,9 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Rating">
+    tools:context=".Rating"
+    >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <View
+        android:id="@+id/top_view"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@drawable/yellow_bg"/>
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginTop="50dp"
+        app:lottie_rawRes="@raw/rating_emoji"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Enjoyed the app?"
+        android:gravity="center"
+        android:id="@+id/txt1"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/top_view"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:text="Please take a moment to rate it!"
+        android:gravity="center"
+        android:id="@+id/txt2"
+        android:layout_below="@+id/txt1"/>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="300sp"
+        android:id="@+id/ratingCardView"
+        android:layout_height="100sp"
+        android:layout_marginTop="100sp"
+        android:layout_below="@id/txt2"
+        android:layout_centerHorizontal="true">
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:id="@+id/rating"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:background="@color/white"
+            android:stepSize="0.5"
+            android:layout_gravity="center"
+            android:progressTint="#3F51B5"
+            android:outlineAmbientShadowColor="@color/black"
+            >
+
+        </RatingBar>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/submitRating"
+        android:layout_below="@id/ratingCardView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40sp"
+        android:text="Submit"
+        android:backgroundTint="#FFEB3B"
+        android:textColor="#3F51B5">
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+    <TextView
+        android:id="@+id/currRating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/submitRating"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="50sp"
+        android:layout_marginTop="50sp"
+        android:layout_marginEnd="50sp"
+        android:layout_marginBottom="50sp"
+        android:hint=" Rating Now : "
+        android:textColor="#2744E3"
+        android:textAllCaps="false"
+        android:textSize="30sp"
+        android:textStyle="italic">
+
+    </TextView>
+
+
+
+</RelativeLayout>
