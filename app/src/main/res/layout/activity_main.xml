@@ -24,16 +24,13 @@
         android:orientation="vertical">
 
 
-        <ImageView
+        <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/userProfile"
-            android:layout_width="56dp"
-            android:layout_height="76dp"
-            android:layout_gravity="right"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="180dp"
-
-            android:src="@drawable/user" />
-
+            android:layout_width="128dp"
+            android:layout_height="115dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/user_animation" />
     </LinearLayout>
 
     <GridLayout
@@ -124,7 +121,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_gravity="left"
-                    android:src="@drawable/video"
+                    android:src="@drawable/play_button"
 
                     />
 
@@ -173,7 +170,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_gravity="left"
-                    android:src="@drawable/map"
+                    android:src="@drawable/hospital_transparent"
 
                     />
 
@@ -223,7 +220,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_gravity="left"
-                    android:src="@drawable/post"
+                    android:src="@drawable/write_post"
 
                     />
 
@@ -267,14 +264,20 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <ImageView
+              <!--  <ImageView
 
                     android:layout_width="80dp"
                     android:layout_height="50dp"
                     android:layout_gravity="left"
-                    android:src="@drawable/rating"
+                    android:src="@drawable/star"
 
-                    />
+                    />-->
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    app:lottie_rawRes="@raw/animation_rating"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true" />
 
                 <TextView
                     android:layout_width="wrap_content"

@@ -45,7 +45,7 @@ public class Profile extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
     String userId;
-    TextView age , Upload ;
+    TextView Upload ;
     CircleImageView img;
 
     ActivityResultLauncher<String> launcher;
@@ -56,7 +56,10 @@ public class Profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        getSupportActionBar().setTitle("Home") ;
+        /*requestWindowFeature (Window.FEATURE_NO_TITLE);
+        this.getWindow ().setFlags (WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);*/
+        getSupportActionBar ().hide ();
+        //getSupportActionBar ().setTitle ("                       Your Profile");
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user == null) {
             startActivity(new Intent(Profile.this, Login.class));
@@ -200,14 +203,14 @@ public class Profile extends AppCompatActivity {
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                name.setText(value.getString("fname"));
-                email.setText("EMAIL  :  " + value.getString("email"));
-                phone.setText("PHONE  :  " + value.getString("phone"));
-                birthday.setText("Date of Birth  :  " + value.getString("dateOfBirth"));
-                gender.setText("Gender  :  " + value.getString("gender"));
-                UserName.setText("Username  :  " + value.getString("username"));
-                Division.setText("Division  :  " + value.getString("division"));
-                District.setText("District  :  " + value.getString("district"));
+                name.setText(value.getString("username"));
+                email.setText("E-Mail: " + value.getString("email"));
+                phone.setText("Contact No: " + value.getString("phone"));
+                birthday.setText("Date of Birth: " + value.getString("dateOfBirth"));
+                gender.setText("Physical Condition: " + value.getString("gender"));
+                UserName.setText("Full Name: " + value.getString("fname"));
+                Division.setText("Division: " + value.getString("division"));
+                District.setText("District: " + value.getString("district"));
             }
         });
 

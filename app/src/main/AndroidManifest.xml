@@ -23,7 +23,7 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/sign_digit_logo"
         android:label="Sign Digit v2"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -65,6 +65,10 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

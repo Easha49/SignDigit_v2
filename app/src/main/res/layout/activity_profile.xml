@@ -1,241 +1,234 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Profile"
     android:id="@+id/reload"
-    android:background="#F6EAC4">
 
-        <RelativeLayout
+    >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <View
+            android:id="@+id/top_view"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/solid_bg" />
+
+        <TextView
+            android:id="@+id/txtWelcome"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="60dp"
+            android:padding="20sp"
+            android:text="Profile"
+            android:textColor="#FBFBFB"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/bungee_shade"/>
 
-            <View
-                android:id="@+id/top_view"
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/top_view"
+            android:orientation="vertical" >
+
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="@drawable/solid_bg2" />
-
-            <TextView
-                android:id="@+id/txtWelcome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="60dp"
-                android:padding="20sp"
-                android:text="Profile"
-                android:textColor="#FBFBFB"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content">
 
 
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/image"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="5dp"
+                    android:outlineAmbientShadowColor="@color/black"
+                    android:outlineSpotShadowColor="@color/black"
+                    />
 
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/top_view"
-                android:orientation="vertical" >
-
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/image"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-
-                        />
-
-                    <TextView
-                        android:id="@+id/upload"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_below="@id/image"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginLeft="180dp"
-                        android:background="@drawable/user"
-                        android:textSize="20dp" />
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/image"
-                        >
-
-                        <TextView
-                            android:id="@+id/name"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_marginTop="20dp"
-                            android:textStyle="bold"
-                            android:textSize="30dp" />
-                    </androidx.cardview.widget.CardView>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="15dp"
-                    android:layout_margin="10dp"
-                    >
-
-
-
-                    <!--- Show Full Name -->
-
-
-
-
-
-
-                    <TextView
-                        android:id="@+id/email"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginBottom="10dp"
-                        android:textStyle="bold"
-                        android:textSize="20dp" />
-
-
-
-
-
-                    <TextView
-                        android:id="@+id/birthday"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/email"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginBottom="10dp"
-                        android:textStyle="bold"
-                        android:textSize="20dp" />
-
-
-
-
-                    <TextView
-                        android:id="@+id/phone"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/birthday"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginBottom="10dp"
-                        android:textStyle="bold"
-                        android:textSize="20dp" />
-
-
-
-                    <TextView
-                        android:id="@+id/gender"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/phone"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginBottom="10dp"
-                        android:textStyle="bold"
-                        android:textSize="20dp" />
-
-
-
-
-                    <TextView
-                        android:id="@+id/userName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/gender"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginBottom="10dp"
-                        android:textStyle="bold"
-                        android:textSize="20dp" />
-
-
-
-                    <TextView
-                        android:id="@+id/division"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/userName"
-                        android:layout_marginLeft="15dp"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="10dp"
-                        android:textSize="20dp" />
-
-
-
-                    <TextView
-                        android:id="@+id/district"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/division"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginBottom="10dp"
-                        android:textStyle="bold"
-                        android:textSize="20dp" />
-
-
-
-
-                </RelativeLayout>
+                <TextView
+                    android:id="@+id/upload"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/image"
+                    android:layout_marginTop="4dp"
+                    android:drawableEnd="@drawable/upload_20"
+                    android:text=" Upload Image"
+                    android:layout_marginLeft="5dp"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
 
                 <androidx.cardview.widget.CardView
-                    android:layout_height="50dp"
-                    android:id="@+id/logout"
-                    android:layout_width="150dp"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="12dp"
-                    android:layout_gravity="center"
-                    android:layout_row="0"
-                    android:layout_column="0"
-                    >
+                    android:layout_width="286dp"
+                    android:layout_height="118dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/image"
+                    app:cardElevation="0dp">
 
-                    <LinearLayout
+                    <TextView
+                        android:id="@+id/name"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/gotoMap"
-
-                        android:layout_marginTop="2dp"
-                        android:orientation="horizontal"  >
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:background="@drawable/shutdownpng"/>
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="    Logout"
-                            android:layout_marginTop="5dp"
-                            android:textAllCaps="false"
-                            android:textColor="@color/black"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="55dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#00000000"
+                        android:hint="Full Name"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/black"
+                        android:textSize="30dp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/dancing_script_bold"/>
                 </androidx.cardview.widget.CardView>
 
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="15dp"
+                android:layout_margin="10dp"
+                >
 
 
 
-            </LinearLayout>
+                <!--- Show Full Name -->
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:hint="Username"
+                    android:fontFamily="@font/dm_mono"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@+id/userName"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:hint="email"
+                    android:fontFamily="@font/dm_mono"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:id="@+id/phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/email"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/dm_mono"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/birthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/phone"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/dm_mono"
+                    android:textColor="@color/black"/>
 
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/birthday"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/dm_mono"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:id="@+id/division"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/gender"
+                    android:layout_marginLeft="15dp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/dm_mono"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/district"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/division"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/dm_mono"
+                    android:textColor="@color/black"/>
 
 
 
+
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_height="wrap_content"
+                android:id="@+id/logout"
+                android:layout_width="150dp"
+                android:layout_gravity="center"
+                android:layout_row="0"
+                android:layout_column="0"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/gotoMap"
+                    android:layout_marginTop="2dp"
+                    android:orientation="vertical"  >
+
+                   <androidx.appcompat.widget.AppCompatButton
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:text="Log Out"
+                       android:textAllCaps="true"
+                       android:textStyle="bold"
+                       android:textSize="15sp"
+                       android:drawableStart="@drawable/shutdownpng"
+                       android:fontFamily="@font/dm_mono"
+                       android:backgroundTint="#009688"/>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
 
 
 
