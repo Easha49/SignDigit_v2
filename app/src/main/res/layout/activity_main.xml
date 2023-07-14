@@ -286,7 +286,8 @@
                     android:text="  Rate our service"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>

@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,6 +53,7 @@ public class Profile extends AppCompatActivity {
     FirebaseDatabase database;
     FirebaseStorage storage;
     CardView logout;
+    Button signOut;//new add
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +84,7 @@ public class Profile extends AppCompatActivity {
         storage = FirebaseStorage.getInstance();
         Division = findViewById(R.id.division) ;
         District = findViewById(R.id.district) ;
+        signOut=findViewById (R.id.btn_signout);//new add
 
         StorageReference dc = storage.getReference().child("users").child(firebaseAuth.getCurrentUser().getUid());
         // Refresh the Whole page .-------------------------------------------------------------------------------------------------------------
@@ -215,7 +218,8 @@ public class Profile extends AppCompatActivity {
         });
 
         // for User Logout
-        logout.setOnClickListener(new View.OnClickListener() {
+        ////////////logout to signout
+        signOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
@@ -223,7 +227,7 @@ public class Profile extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.remove("isLoggedin");
                 editor.commit();
-                //Toast.makeText(UserProfile_Page.this, "Logged out", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Profile.this, "Logged out", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(Profile.this, Login.class));
                 finish();
             }

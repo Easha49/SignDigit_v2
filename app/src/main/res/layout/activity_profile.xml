@@ -217,7 +217,8 @@
                        android:textSize="15sp"
                        android:drawableStart="@drawable/shutdownpng"
                        android:fontFamily="@font/dm_mono"
-                       android:backgroundTint="#009688"/>
+                       android:backgroundTint="#009688"
+                       android:id="@+id/btn_signout"/>
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
