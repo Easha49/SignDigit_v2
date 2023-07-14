@@ -39,6 +39,7 @@ public class Post_Page extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar ().hide ();
         setContentView(R.layout.activity_post_page);
         UploadPost = findViewById(R.id.btn_addPost) ;
         previousPage = findViewById(R.id.previousButton) ;
