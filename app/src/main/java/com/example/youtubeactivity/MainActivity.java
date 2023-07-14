@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         post.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,Post.class));
+                startActivity(new Intent(MainActivity.this,Post_Page.class));
             }
         });
 
